@@ -90,7 +90,7 @@ const Director = () => {
                     </div>
                 )
                 }
-                <h3 className='text-white text-2xl font-bold'>{director?.name}</h3>
+                <h3 className='text-white md:text-2xl text-[15px] font-bold'>{director?.name}</h3>
                 <p className='text-gray-400 text-sm'><span className='text-white mr-1'>Birthday</span> {director?.birthday}</p>
                 <p className='text-gray-400 text-sm'><span className='text-white mr-1'>Place of Birth</span> {director?.place_of_birth}</p>
                 <p className='text-gray-400 text-sm'>{director?.biography}</p>
