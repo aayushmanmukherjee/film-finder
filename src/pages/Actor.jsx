@@ -99,7 +99,7 @@ const Actor = () => {
               <span className="text-white mr-1">Place of Birth</span>{" "}
               {actor?.place_of_birth}
             </p>
-            <p className="text-gray-400 text-sm">{actor?.biography}</p>
+            <p className="text-gray-400 md:text-sm text-[7px]">{actor?.biography}</p>
           </div>
         </div>
       </div>
