@@ -52,20 +52,21 @@ const Actor = () => {
 
   return (
     <div>
+      <div className="w-screen h-screen bg-[#1e242d]">
       <div className="w-full bg-black py-2">
         <Navigation />
       </div>
 
-      <div className="flex gap-5 px-10 py-8 bg-[#1e242d]">
+      <div className="flex gap-5 md:px-10 px-4 py-8 bg-[#1e242d]">
         <div>
-          <div className="flex gap-5 justify-start flex-wrap">
+          <div className="flex md:gap-5 gap-2 justify-start flex-wrap">
             {movies?.cast
               ?.filter((i) => i.poster_path)
               .map((i) => (
                 <Link to={`/movie?query=${encodeURIComponent(i.id)}`}>
-                  <div className="border border-gray-400 rounded-md w-[130px] h-[190px] relative group hover:border hover:border-green-400 hover:scale-105 transition-all duration-200">
-                    <p className="opacity-0 absolute -top-5 group-hover:opacity-100 text-[7px] py-[1px] px-[2px] text-white font-extralight z-10 bg-gray-400 rounded-md">as {i.character}</p>
-                    <p className="opacity-0 absolute top-2 group-hover:opacity-100 text-[10px] text-white font-extralight z-10 bg-gray-400">
+                  <div className="border border-gray-400 rounded-md md:w-[130px] w-[70px] md:h-[190px] h-[100px] relative group hover:border hover:border-green-400 hover:scale-105 transition-all duration-200">
+                    <p className="opacity-0 absolute -top-5 group-hover:opacity-100 md:text-[7px] text-[4px] py-[1px] px-[2px] text-white font-extralight z-10 bg-gray-400 rounded-md">as {i.character}</p>
+                    <p className="opacity-0 absolute top-2 group-hover:opacity-100 md:text-[10px] text-[6px] text-white font-extralight z-10 bg-gray-400">
                       {i.original_title}
                     </p>
                     <img
@@ -78,14 +79,14 @@ const Actor = () => {
           </div>
         </div>
 
-        <div className="pr-10">
-          <div className="flex flex-col items-start justify-center gap-3 w-[250px]">
+        <div className="md:pr-10 pr-1">
+          <div className="flex flex-col items-start justify-center gap-3 md:w-[250px] w-[100px]">
             {actor?.profile_path && (
               <div className="border rounded-sm">
                 <img
                   src={`https://image.tmdb.org/t/p/original${actor.profile_path}`}
                   alt={actor.name}
-                  className="w-[250px] h-[350px] rounded-sm"
+                  className="md:w-[250px] w-[100px] md:h-[350px] h-[150px] rounded-sm"
                 />
               </div>
             )}
@@ -101,6 +102,7 @@ const Actor = () => {
             <p className="text-gray-400 text-sm">{actor?.biography}</p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -43,20 +43,20 @@ function handleRemove(movieid) {
 
   return (
     <div>
-
+<div className="h-screen w-screen bg-[#1e242d]">
       <div className="w-full bg-black py-2">
         <Navigation/>
       </div>
     <div className="bg-[#1e242d] text-white w-full">
-      <div className="flex gap-5 flex-wrap px-20 py-10">
+      <div className="flex md:gap-5 gap-2 flex-wrap md:px-20 px-5 py-10">
       {allList.length>0 && movieData.map((i)=>(
 
             <div className="flex flex-col items-start">
-           <Link to={`/movie?query=${encodeURIComponent(i.id)}`}><div className="relative w-[150px] h-[200px] group border border-gray-400 rounded-md hover:border hover:border-green-400 hover:scale-105 transition-all duration-200">
-          <p className='opacity-0 absolute top-2 group-hover:opacity-100 text-[10px] text-white font-extralight z-10 bg-gray-400'>{i.original_title}</p>
+           <Link to={`/movie?query=${encodeURIComponent(i.id)}`}><div className="relative md:w-[150px] w-[110px] md:h-[200px] h-[160px] group border border-gray-400 rounded-md hover:border hover:border-green-400 hover:scale-105 transition-all duration-200">
+          <p className='opacity-0 absolute top-2 group-hover:opacity-100 md:text-[10px] text-[6px] text-white font-extralight z-10 bg-gray-400'>{i.original_title}</p>
           <img src={`https://image.tmdb.org/t/p/original${i.poster_path}`} className='absolute inset-0 h-[100%] w-[100%] rounded-md' />
           </div></Link>
-          <p className="text-[15px] text-gray-400 hover:underline hover:text-red-500 transition-all duration-200 cursor-pointer" onClick={()=>handleRemove(i.id)}>remove</p>
+          <p className="md:text-[15px] text-[7px] text-gray-400 hover:underline hover:text-red-500 transition-all duration-200 cursor-pointer" onClick={()=>handleRemove(i.id)}>remove</p>
           </div>
        
 
@@ -64,6 +64,7 @@ function handleRemove(movieid) {
       
       }
        </div>
+    </div>
     </div>
     </div>
   )

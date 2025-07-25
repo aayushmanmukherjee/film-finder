@@ -110,14 +110,15 @@ const Search = () => {
 
   return (
     <div>
+      <div className="w-screen h-screen bg-[#1e242d]">
       <div className="w-full bg-black py-2">
         <Navigation />
       </div>
 
       <div>
         {person && (
-          <div className="w-full bg-[#1e242d] py-10 px-20">
-            <h2 className="text-white font-extrabold text-5xl mb-8">People</h2>
+          <div className="w-full bg-[#1e242d] py-10 md:px-20 px-5">
+            <h2 className="text-white font-extrabold md:text-5xl text-xl mb-8">People</h2>
             <div className="flex justify-start items-center gap-4 flex-wrap">
               {person
                 .filter((p) => p.profile_path)
@@ -128,7 +129,7 @@ const Search = () => {
                     }/${p.id}`}
                     key={p.id}
                   >
-                    <div className="border rounded-sm border-gray-400 relative group w-[150px] h-[220px] overflow-hidden">
+                    <div className="border rounded-sm border-gray-400 relative group md:w-[150px] w-[70px] md:h-[220px] h-[140px] overflow-hidden">
                       <p className="opacity-0 absolute top-2 group-hover:opacity-100 text-[10px] text-white font-extralight z-10 bg-gray-400 px-1 rounded-sm">
                         {p.name}
                       </p>
@@ -150,10 +151,10 @@ const Search = () => {
             .map((i) => {
               const cast = castData[i.id];
               return (
-                <div className="w-full bg-[#1e242d] py-10 px-20" key={i.id}>
+                <div className="w-full bg-[#1e242d] py-10 md:px-20 px-5" key={i.id}>
                   <div className="flex flex-col items-center justify-center gap-4 border-t border-b py-4">
-                    <div className="flex justify-center items-center gap-4">
-                      <div className="w-[50%]">
+                    <div className="flex md:flex-row flex-col justify-center items-center gap-4">
+                      <div className="md:w-[50%] w-[100%]">
                         {i.backdrop_path && (
                           <img
                             src={`https://image.tmdb.org/t/p/original/${i.backdrop_path}`}
@@ -162,8 +163,8 @@ const Search = () => {
                           />
                         )}
                       </div>
-                      <div className="w-[50%] flex flex-col items-start justify-center gap-2">
-                        <h2 className="text-white font-extrabold text-2xl">
+                      <div className="md:w-[50%] w-[100%] flex flex-col md:items-start items-center justify-center gap-2">
+                        <h2 className="text-white font-extrabold md:text-2xl text-xl">
                           {i?.original_title}
                         </h2>
                         <span className="text-white text-sm">
@@ -174,7 +175,7 @@ const Search = () => {
                         </span>
                         <p className="text-gray-400">{i.overview}</p>
                         <div>
-                          <h3 className="text-gray-400 text-2xl font-bold">
+                          <h3 className="text-gray-400 md:text-2xl text-xl font-bold">
                             Cast
                           </h3>
                           <ul>
@@ -185,12 +186,12 @@ const Search = () => {
                                   key={i.id}
                                 >
                                   <Link to={`/actor/${i?.id}`}>
-                                    <span className="text-white text-xl hover:underline hover:text-gray-400 cursor-pointer transition-all duration-200">
+                                    <span className="text-white md:text-xl text-[12px] hover:underline hover:text-gray-400 cursor-pointer transition-all duration-200">
                                       {i?.original_name || "Unknown"}
                                     </span>
                                   </Link>
-                                  <span className="text-gray-400">as</span>
-                                  <span className="text-gray-400">
+                                  <span className="text-gray-400 text-[10px] md:text-sm">as</span>
+                                  <span className="text-gray-400 text-[12px] md:text-sm">
                                     {i?.character || "Unknown"}
                                   </span>
                                 </li>
@@ -204,7 +205,7 @@ const Search = () => {
                     </div>
                     <div className="flex justify-start w-[100%] items-center gap-10">
                     <div className="bg-[#1e242d] gap-8">
-                      <span className="text-gray-400">
+                      <span className="text-gray-400 text-[10px] md:text-sm">
                         Director
                         {cast?.crew ? (
                           <Link
@@ -214,7 +215,7 @@ const Search = () => {
                               )?.id
                             }`}
                           >
-                            <button className="text-white border bg-gray-700 p-2 rounded-md text-sm ml-2  hover:bg-gray-500 transition-all duration-200">
+                            <button className="text-white border bg-gray-700 p-2 rounded-3xl md:text-sm text-[10px] ml-2  hover:bg-gray-500 transition-all duration-200">
                               {cast.crew.find(
                                 (member) => member.job === "Director"
                               )?.name || "Unknown"}
@@ -228,13 +229,14 @@ const Search = () => {
                       </span>
                     </div>
                     <div className="flex items-center">
-                      <button className="text-white font-bold text-[12px]  border rounded-3xl py-1 px-2  bg-gray-700  hover:bg-gray-500 transition-all duration-200" onClick={()=>handleList(i?.id)}>Add to Personal List</button>
+                      <button className="text-white font-bold md:text-[12px] text-[10px]  border rounded-3xl py-1 px-2  bg-gray-700  hover:bg-gray-500 transition-all duration-200" onClick={()=>handleList(i?.id)}>Add to Personal List</button>
                     </div>
                     </div>
                   </div>
                 </div>
               );
             })}
+      </div>
       </div>
     </div>
   );

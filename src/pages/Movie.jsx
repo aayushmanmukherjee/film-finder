@@ -51,14 +51,15 @@ const Movie = () => {
       
   return (
     <div>
+      <div className='bg-[#1e242d] h-screen w-screen'>
       <div className="w-full bg-black py-2">
         <Navigation />
       </div>
       
-        <div className="w-full bg-[#1e242d] py-10 px-20">
+        <div className="w-full bg-[#1e242d] py-10 md:px-20 px-5">
             <div className="flex flex-col items-center justify-center gap-4 border-t border-b py-4">
                 <div className="flex justify-center items-center gap-4">
-                  <div className="w-[50%]">
+                  <div className="md:w-[50%] w-[100%]">
                     {movie.backdrop_path && (
                       <img
                         src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
@@ -68,7 +69,7 @@ const Movie = () => {
                     )}
                   </div>
                   </div>
-                  <div className="w-[50%] flex flex-col items-start justify-center gap-2">
+                  <div className="md:w-[50%] w-[100%] flex flex-col items-start justify-center gap-2">
                     <h2 className="text-white font-extrabold text-2xl">
                       {movie?.original_title}
                     </h2>
@@ -83,6 +84,7 @@ const Movie = () => {
         </div>
       </div>
 
+    </div>
     </div>
     </div>
   )

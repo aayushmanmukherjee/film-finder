@@ -16,7 +16,7 @@ const Home = () => {
           alt="banner"
           className="h-full w-full bg-center bg-cover absolute inset-0 z-0"
         />
-        <div className="absolute top-2 z-20 w-full py-2">
+        <div className="absolute top-2 z-20 w-full md:py-2">
           <Navigation />
         </div>
       </div>
