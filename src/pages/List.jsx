@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from "react-redux";
 import Navigation from "../components/Navigation";
 import { Link } from 'react-router-dom'
 import { remove } from "../redux/listslice";
+import Footer from "../components/Footer";
 
 const List = () => {
   const allList = useSelector((state) => state.list.lists);
@@ -65,7 +66,9 @@ function handleRemove(movieid) {
       }
        </div>
     </div>
+    
     </div>
+    <div><Footer/></div>
     </div>
   )
 }

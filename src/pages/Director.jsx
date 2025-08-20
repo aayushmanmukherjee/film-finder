@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 
 const Director = () => {
     const {id} = useParams();
@@ -97,6 +98,7 @@ const Director = () => {
             </div>
         </div>
         </div>
+        <div><Footer/></div>
       </div>
 
 

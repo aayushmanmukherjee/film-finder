@@ -2,6 +2,7 @@ import React from "react";
 import hero from "../assets/shawshank-redemption-banner.jpg";
 import Navigation from "../components/Navigation";
 import Explainer from "../components/Explainer";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -28,7 +29,8 @@ const Home = () => {
         </h2>
         <Explainer />
       </div>
-      
+      <div> <Footer/></div>
+     
     </div>
   );
 };
